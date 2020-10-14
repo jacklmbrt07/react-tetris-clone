@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { createStage } from "../gameHelpers";
+import { createStage, STAGE_WIDTH } from "../gameHelpers";
 
 export const useStage = (player, resetPlayer) => {
   const [stage, setStage] = useState(createStage());
@@ -32,7 +32,7 @@ export const useStage = (player, resetPlayer) => {
     };
 
     setStage((prev) => updateStage(prev));
-  }, [player]);
+  }, [player, resetPlayer]);
 
   return [stage, setStage];
 };
